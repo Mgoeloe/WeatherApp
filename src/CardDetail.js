@@ -42,7 +42,7 @@ const CardDetail = ({ lat, lon, name }) => {
           console.log(d, n);
 
         return (
-        <div key={uuid()}>
+        <div key={uuid()} className='weatherPerDay'>
           <Collapsible trigger={<div> {n} <img className='icons2' 
               src={`http://openweathermap.org/img/wn/${datum.weather[0].icon}.png`} alt='icon' ></img>
               {datum.temp.day} &deg;C &dArr;</div>}
