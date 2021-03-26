@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import uuid from 'uuidv4';
+// import uuid from 'uuidv4';
 import Collapsible from 'react-collapsible';
 import './CardDetails.css'
 
@@ -13,7 +13,7 @@ const CardDetail = ({ lat, lon, name }) => {
   const [weatherDetail, setWeatherDetail] = useState();
   const [date, setDate] = useState();
 
-  const { uuid } = require('uuidv4');
+  const { v4: uuid } = require('uuid');
 
   useEffect(() => {
     fetchData();
@@ -50,6 +50,7 @@ const CardDetail = ({ lat, lon, name }) => {
       
           <div className='tableDiv'>
             <table>
+              <tbody>
               <tr>
                 <td></td>
                 <td>Morning</td>
@@ -64,6 +65,7 @@ const CardDetail = ({ lat, lon, name }) => {
                 <td>{datum.temp.eve}&deg;C</td>
                 <td>{datum.temp.night}&deg;C</td>
               </tr>
+              </tbody>
             </table>
           </div>
           
